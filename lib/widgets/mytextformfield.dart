@@ -9,6 +9,8 @@ class MyTextFormField extends StatefulWidget{
   final bool isEmail;
   final bool isPassword;
   final Map icons;
+  final Color color;
+  final TextStyle hintStyle;
 
   MyTextFormField({
     this.hintText,
@@ -16,7 +18,9 @@ class MyTextFormField extends StatefulWidget{
     this.onSaved,
     this.isEmail = false,
     this.isPassword = false,
-    this.icons
+    this.icons,
+    this.color,
+    this.hintStyle
   });
 
   @override
@@ -41,6 +45,7 @@ class MyTextFormFieldState extends State<MyTextFormField> {
           }) : null,
           //prefixIcon: widget.icons["prefix"] != "" ? Icon(widget.icons["prefix"]) : null,
           hintText: widget.hintText,
+          hintStyle: widget.hintStyle,
           contentPadding: EdgeInsets.all(20.0),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(50),
@@ -50,7 +55,7 @@ class MyTextFormFieldState extends State<MyTextFormField> {
             ),
           ),
           filled: true,
-          fillColor: Colors.grey[300],
+          fillColor: widget.color?? Colors.grey[300],
         ),
         obscureText: widget.isPassword ? !isVisible: widget.isPassword,
         validator: widget.validator,
