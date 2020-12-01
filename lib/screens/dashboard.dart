@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:dec_fluttercreate/constants/assets.dart';
 import 'package:dec_fluttercreate/utils/size_config.dart';
 import 'package:dec_fluttercreate/widgets/mytextformfield.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
@@ -20,6 +21,7 @@ class _DashboardState extends State<Dashboard> {
         child: Scaffold(
       body: SingleChildScrollView(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
               width: SizeConfig.screenWidth,
@@ -148,14 +150,114 @@ class _DashboardState extends State<Dashboard> {
                             child: Container(
                               height: SizeConfig.blockSizeVertical * 15,
                               width: SizeConfig.blockSizeHorizontal *50,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.only(top: SizeConfig.blockSizeVertical * 1.5, left: SizeConfig.blockSizeHorizontal * 4),
+                                    child: CircleAvatar(
+                                      radius: 12.0,
+                                      child: Text(
+                                        "1",
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 10.0
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.only(top: SizeConfig.blockSizeVertical * 1.5, left: SizeConfig.blockSizeHorizontal * 8),
+                                    child: Text(
+                                      "Independant",
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                        fontSize: 22.0
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.only(left: SizeConfig.blockSizeHorizontal * 8),
+                                    child: Text(
+                                      "House",
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 22.0
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.only(left: SizeConfig.blockSizeHorizontal * 8),
+                                    child: Text(
+                                      "Freedom & privacy",
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 15.0
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
                             ),
                           ),
                           Card(
-                            color: Colors.lightGreenAccent,
+                            color: Colors.lightGreen,
                             elevation: 10.0,
                             child: Container(
                               height: SizeConfig.blockSizeVertical * 15,
                               width: SizeConfig.blockSizeHorizontal *50,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.only(top: SizeConfig.blockSizeVertical * 1.5, left: SizeConfig.blockSizeHorizontal * 4),
+                                    child: CircleAvatar(
+                                      radius: 12.0,
+                                      child: Text(
+                                        "2",
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 10.0
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.only(top: SizeConfig.blockSizeVertical * 1.5, left: SizeConfig.blockSizeHorizontal * 8),
+                                    child: Text(
+                                      "Independant",
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 22.0
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.only(left: SizeConfig.blockSizeHorizontal * 8),
+                                    child: Text(
+                                      "House",
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 22.0
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.only(left: SizeConfig.blockSizeHorizontal * 8),
+                                    child: Text(
+                                      "Freedom & privacy",
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 15.0
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
                             ),
                           ),
                           Card(
@@ -174,52 +276,270 @@ class _DashboardState extends State<Dashboard> {
               ),
             ),
             SizedBox(
-              height: SizeConfig.blockSizeVertical * 20,
+              height: SizeConfig.blockSizeVertical * 17,
+            ),
+
+            Row(
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 15.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Trending projects",
+                        style: TextStyle(
+                          fontSize: 25.0,
+                          fontWeight: FontWeight.bold
+                        ),
+                      ),
+                      SizedBox(
+                        width: SizeConfig.blockSizeHorizontal * 30,
+                      ),
+                      Text(
+                        "See more",
+                        style: TextStyle(
+                            fontSize: 25.0,
+                            color: Colors.lightGreenAccent,
+                          fontWeight: FontWeight.bold
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: SizeConfig.blockSizeVertical * 2,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 15.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Trending projects",
-                    style: TextStyle(
-                      fontSize: 16.0
-                    ),
-                  ),
-                  Text(
-                    "See more",
-                    style: TextStyle(
-                        fontSize: 16.0
-                    ),
+              padding: EdgeInsets.only(left: 10.0),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child:
+                  Row(
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Card(
+                            color: Colors.lightGreenAccent,
+                            elevation: 3.0,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Container(
+                              height: SizeConfig.blockSizeVertical * 23,
+                              width: SizeConfig.blockSizeHorizontal * 80,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.rectangle,
+                                borderRadius: BorderRadius.circular(10),
+                                image: DecorationImage(
+                                  image: AssetImage(
+                                    Assets.images[0]
+                                  ),
+                                  fit: BoxFit.cover
+                                ),
+                              ),
+                            ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Column(
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.only(left : SizeConfig.blockSizeHorizontal,top: SizeConfig.blockSizeVertical),
+                                    child: Text(
+                                        "Pride Park Royale",
+                                      style: TextStyle(
+                                        fontSize: 20.0
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.only(left : SizeConfig.blockSizeHorizontal),
+                                    child: Text(
+                                      "£1.86 Cr - 2.85 Cr",
+                                      style: TextStyle(
+                                          fontSize: 20.0,
+                                        fontWeight: FontWeight.bold
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
+                              SizedBox(
+                                width: SizeConfig.blockSizeHorizontal * 38,
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(top: 7.0),
+                                child: InkWell(
+                                  child: CircleAvatar(
+                                    backgroundColor: Colors.lightGreenAccent,
+                                    child: Center(
+                                      child: Icon(
+                                        Icons.arrow_forward,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Card(
+                            color: Colors.lightGreenAccent,
+                            elevation: 3.0,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Container(
+                              height: SizeConfig.blockSizeVertical * 23,
+                              width: SizeConfig.blockSizeHorizontal * 80,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.rectangle,
+                                borderRadius: BorderRadius.circular(10),
+                                image: DecorationImage(
+                                    image: AssetImage(
+                                        Assets.images[1]
+                                    ),
+                                    fit: BoxFit.cover
+                                ),
+                              ),
+                            ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Column(
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.only(left : SizeConfig.blockSizeHorizontal,top: SizeConfig.blockSizeVertical),
+                                    child: Text(
+                                      "Pride Park Royale",
+                                      style: TextStyle(
+                                          fontSize: 20.0
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.only(left : SizeConfig.blockSizeHorizontal),
+                                    child: Text(
+                                      "£1.86 Cr - 2.85 Cr",
+                                      style: TextStyle(
+                                          fontSize: 20.0,
+                                          fontWeight: FontWeight.bold
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
+                              SizedBox(
+                                width: SizeConfig.blockSizeHorizontal * 38,
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(top: 7.0),
+                                child: InkWell(
+                                  child: CircleAvatar(
+                                    backgroundColor: Colors.lightGreenAccent,
+                                    child: Center(
+                                      child: Icon(
+                                        Icons.arrow_forward,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Card(
+                            color: Colors.lightGreenAccent,
+                            elevation: 3.0,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Container(
+                              height: SizeConfig.blockSizeVertical * 23,
+                              width: SizeConfig.blockSizeHorizontal * 80,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.rectangle,
+                                borderRadius: BorderRadius.circular(10),
+                                image: DecorationImage(
+                                    image: AssetImage(
+                                        Assets.images[2]
+                                    ),
+                                    fit: BoxFit.cover
+                                ),
+                              ),
+                            ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Column(
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.only(left : SizeConfig.blockSizeHorizontal,top: SizeConfig.blockSizeVertical),
+                                    child: Text(
+                                      "Pride Park Royale",
+                                      style: TextStyle(
+                                          fontSize: 20.0
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.only(left : SizeConfig.blockSizeHorizontal),
+                                    child: Text(
+                                      "£1.86 Cr - 2.85 Cr",
+                                      style: TextStyle(
+                                          fontSize: 20.0,
+                                          fontWeight: FontWeight.bold
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
+                              SizedBox(
+                                width: SizeConfig.blockSizeHorizontal * 38,
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(top: 7.0),
+                                child: InkWell(
+                                  child: CircleAvatar(
+                                    backgroundColor: Colors.lightGreenAccent,
+                                    child: Center(
+                                      child: Icon(
+                                        Icons.arrow_forward,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                    ],
                   )
-                ],
+                ,
               ),
-            ),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child:
-                Row(
-                  children: [
-                    Card(
-                      color: Colors.lightGreenAccent,
-                      elevation: 10.0,
-                      child: Container(
-                        height: SizeConfig.blockSizeVertical * 15,
-                        width: SizeConfig.blockSizeHorizontal *50,
-                      ),
-                    ),
-                    Card(
-                      color: Colors.lightGreenAccent,
-                      elevation: 10.0,
-                      child: Container(
-                        height: SizeConfig.blockSizeVertical * 15,
-                        width: SizeConfig.blockSizeHorizontal *50,
-                      ),
-                    ),
-                  ],
-                )
-              ,
             )
           ],
         ),
