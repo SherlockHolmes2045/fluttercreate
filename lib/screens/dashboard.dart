@@ -1,8 +1,10 @@
 import 'dart:ui';
 
 import 'package:dec_fluttercreate/constants/assets.dart';
+import 'package:dec_fluttercreate/screens/house_detail.dart';
 import 'package:dec_fluttercreate/utils/size_config.dart';
 import 'package:dec_fluttercreate/widgets/mytextformfield.dart';
+import 'package:dec_fluttercreate/widgets/scale_route_transition.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -377,6 +379,9 @@ class _DashboardState extends State<Dashboard> {
                               Padding(
                                 padding: EdgeInsets.only(top: 7.0),
                                 child: InkWell(
+                                  onTap: (){
+                                    Navigator.push(context,ScaleRoute(page: HomeDetail()));
+                                  },
                                   child: CircleAvatar(
                                     backgroundColor: Colors.lightGreenAccent,
                                     child: Center(
@@ -449,6 +454,9 @@ class _DashboardState extends State<Dashboard> {
                               Padding(
                                 padding: EdgeInsets.only(top: 7.0),
                                 child: InkWell(
+                                  onTap: (){
+                                    Navigator.push(context,ScaleRoute(page: HomeDetail()));
+                                  },
                                   child: CircleAvatar(
                                     backgroundColor: Colors.lightGreenAccent,
                                     child: Center(
@@ -521,6 +529,9 @@ class _DashboardState extends State<Dashboard> {
                               Padding(
                                 padding: EdgeInsets.only(top: 7.0),
                                 child: InkWell(
+                                  onTap: (){
+                                    Navigator.push(context,ScaleRoute(page: HomeDetail()));
+                                  },
                                   child: CircleAvatar(
                                     backgroundColor: Colors.lightGreenAccent,
                                     child: Center(
