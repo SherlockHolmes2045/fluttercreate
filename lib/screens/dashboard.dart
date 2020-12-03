@@ -277,6 +277,7 @@ class _DashboardState extends State<Dashboard> {
                 ],
               ),
             ),
+
             SizedBox(
               height: SizeConfig.blockSizeVertical * 17,
             ),
