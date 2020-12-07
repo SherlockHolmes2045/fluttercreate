@@ -1,16 +1,41 @@
+import 'dart:async';
+
 import 'package:dec_fluttercreate/constants/assets.dart';
 import 'package:dec_fluttercreate/utils/size_config.dart';
 import 'package:dec_fluttercreate/widgets/LightBox.dart';
 import 'package:dec_fluttercreate/widgets/custom_popup_route.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class HomeDetail extends StatefulWidget {
   @override
   _HomeDetailState createState() => _HomeDetailState();
 }
 
-class _HomeDetailState extends State<HomeDetail> {
+class _HomeDetailState extends State<HomeDetail>{
+
+  Completer<GoogleMapController> _controller = Completer();
+
+  static const LatLng _center = const LatLng(45.521563, -122.677433);
+
+  static final CameraPosition _kGooglePlex = CameraPosition(
+    target: LatLng(37.42796133580664, -122.085749655962),
+    zoom: 14.4746,
+  );
+
+  static final CameraPosition _kLake = CameraPosition(
+      bearing: 192.8334901395799,
+      target: LatLng(37.43296265331129, -122.08832357078792),
+      tilt: 59.440717697143555,
+      zoom: 19.151926040649414);
+
+  Future<void> _goToTheLake() async {
+    final GoogleMapController controller = await _controller.future;
+    controller.animateCamera(CameraUpdate.newCameraPosition(_kLake));
+  }
+
+  
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -268,7 +293,7 @@ class _HomeDetailState extends State<HomeDetail> {
                 Padding(
                   padding: EdgeInsets.only(
                       top: SizeConfig.blockSizeVertical * 1.5,
-                      left: SizeConfig.blockSizeHorizontal * 10),
+                      left: SizeConfig.blockSizeHorizontal * 7),
                   child: SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Row(
@@ -391,9 +416,33 @@ class _HomeDetailState extends State<HomeDetail> {
                           ],
                         ),
                       ],
+                    )
+                  ),
+                ),
+                Padding(
+                    padding: EdgeInsets.only(
+                        top: SizeConfig.blockSizeVertical * 2,
+                        left: SizeConfig.blockSizeHorizontal * 4),
+                    child: Text(
+                      "Location",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 18.0),
+                    )
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 10.0),
+                  child: Container(
+                    height: SizeConfig.blockSizeVertical * 30,
+                    width: SizeConfig.screenWidth,
+                    child: GoogleMap(
+                      mapType: MapType.hybrid,
+                      initialCameraPosition: _kGooglePlex,
+                      onMapCreated: (GoogleMapController controller) {
+                        _controller.complete(controller);
+                      },
                     ),
                   ),
-                )
+                ),
               ],
             ),
           )),

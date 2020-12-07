@@ -293,17 +293,17 @@ class _DashboardState extends State<Dashboard> {
                       Text(
                         "Trending projects",
                         style: TextStyle(
-                          fontSize: 25.0,
+                          fontSize: 20.0,
                           fontWeight: FontWeight.bold
                         ),
                       ),
                       SizedBox(
-                        width: SizeConfig.blockSizeHorizontal * 30,
+                        width: SizeConfig.blockSizeHorizontal * 28,
                       ),
                       Text(
                         "See more",
                         style: TextStyle(
-                            fontSize: 25.0,
+                            fontSize: 20.0,
                             color: Colors.lightGreenAccent,
                           fontWeight: FontWeight.bold
                         ),
@@ -314,7 +314,7 @@ class _DashboardState extends State<Dashboard> {
               ],
             ),
             SizedBox(
-              height: SizeConfig.blockSizeVertical * 2,
+              height: SizeConfig.blockSizeVertical * 1.5,
             ),
             Padding(
               padding: EdgeInsets.only(left: 10.0),
@@ -375,7 +375,7 @@ class _DashboardState extends State<Dashboard> {
                                 ],
                               ),
                               SizedBox(
-                                width: SizeConfig.blockSizeHorizontal * 38,
+                                width: SizeConfig.blockSizeHorizontal * 30,
                               ),
                               Padding(
                                 padding: EdgeInsets.only(top: 7.0),
@@ -450,7 +450,7 @@ class _DashboardState extends State<Dashboard> {
                                 ],
                               ),
                               SizedBox(
-                                width: SizeConfig.blockSizeHorizontal * 38,
+                                width: SizeConfig.blockSizeHorizontal * 30,
                               ),
                               Padding(
                                 padding: EdgeInsets.only(top: 7.0),
@@ -525,7 +525,7 @@ class _DashboardState extends State<Dashboard> {
                                 ],
                               ),
                               SizedBox(
-                                width: SizeConfig.blockSizeHorizontal * 38,
+                                width: SizeConfig.blockSizeHorizontal * 30,
                               ),
                               Padding(
                                 padding: EdgeInsets.only(top: 7.0),
