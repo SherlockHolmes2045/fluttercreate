@@ -82,7 +82,7 @@ class _DashboardState extends State<Dashboard> {
                       ],
                     ),
                   ),
-                  Positioned(
+                  /*Positioned(
                     top: SizeConfig.blockSizeVertical * 8,
                     left: SizeConfig.blockSizeHorizontal ,
                     child: Padding(
@@ -99,7 +99,7 @@ class _DashboardState extends State<Dashboard> {
                         ),
                       ),
                     ),
-                  ),
+                  ),*/
                   /*Positioned(
                     top: SizeConfig.blockSizeVertical * 35,
                     left: SizeConfig.blockSizeHorizontal * 4,
@@ -150,7 +150,7 @@ class _DashboardState extends State<Dashboard> {
                             color: Colors.lightGreenAccent,
                             elevation: 10.0,
                             child: Container(
-                              height: SizeConfig.blockSizeVertical * 15,
+                              //height: SizeConfig.blockSizeVertical * 15,
                               width: SizeConfig.blockSizeHorizontal *50,
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -208,7 +208,7 @@ class _DashboardState extends State<Dashboard> {
                             color: Colors.lightGreen,
                             elevation: 10.0,
                             child: Container(
-                              height: SizeConfig.blockSizeVertical * 15,
+                              //height: SizeConfig.blockSizeVertical * 15,
                               width: SizeConfig.blockSizeHorizontal *50,
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -266,7 +266,7 @@ class _DashboardState extends State<Dashboard> {
                             color: Colors.lightGreenAccent,
                             elevation: 10.0,
                             child: Container(
-                              height: SizeConfig.blockSizeVertical * 15,
+                             // height: SizeConfig.blockSizeVertical * 15,
                               width: SizeConfig.blockSizeHorizontal *50,
                             ),
                           )
@@ -282,36 +282,40 @@ class _DashboardState extends State<Dashboard> {
               height: SizeConfig.blockSizeVertical * 17,
             ),
 
-            Row(
-              children: [
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 15.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Trending projects",
-                        style: TextStyle(
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.bold
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 15.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Trending projects",
+                          style: TextStyle(
+                            fontSize: 19.0,
+                            fontWeight: FontWeight.bold
+                          ),
                         ),
-                      ),
-                      SizedBox(
-                        width: SizeConfig.blockSizeHorizontal * 28,
-                      ),
-                      Text(
-                        "See more",
-                        style: TextStyle(
-                            fontSize: 20.0,
-                            color: Colors.lightGreenAccent,
-                          fontWeight: FontWeight.bold
+                        SizedBox(
+                          width: SizeConfig.blockSizeHorizontal * 28,
                         ),
-                      )
-                    ],
+                        Text(
+                          "See more",
+                          style: TextStyle(
+                              fontSize: 18.0,
+                              color: Colors.lightGreenAccent,
+                            fontWeight: FontWeight.bold
+                          ),
+                          overflow: TextOverflow.clip,
+                        )
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
             SizedBox(
               height: SizeConfig.blockSizeVertical * 1.5,
