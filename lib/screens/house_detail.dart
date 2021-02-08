@@ -294,152 +294,131 @@ class _HomeDetailState extends State<HomeDetail>{
                   padding: EdgeInsets.only(
                       top: SizeConfig.blockSizeVertical * 1.5,
                       left: SizeConfig.blockSizeHorizontal * 7),
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
-                          children: [
-                            Icon(
-                              Icons.wifi,
-                              color: Colors.grey
-                            ),
-                            Text(
-                              "Wi-Fi",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold
-                              ),
-                            )
-                          ],
-                        ),
-                        SizedBox(
-                          width: SizeConfig.blockSizeHorizontal * 5,
-                        ),
-                        Column(
-                          children: [
-                            Icon(
-                              Icons.directions_car_sharp,
-                              color: Colors.grey
-                            ),
-                            Text(
-                              "Car parking",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold
-                              ),
-                            )
-                          ],
-                        ),
-                        SizedBox(
-                          width: SizeConfig.blockSizeHorizontal * 5,
-                        ),
-                        Column(
-                          children: [
-                            Icon(
-                              Icons.tv,
-                              color: Colors.grey
-                            ),
-                            Text(
-                              "TV",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold
-                              ),
-                            )
-                          ],
-                        ),
-                        SizedBox(
-                          width: SizeConfig.blockSizeHorizontal * 5,
-                        ),
-                        Column(
-                          children: [
-                            Icon(
-                              FontAwesomeIcons.fan,
-                              color: Colors.grey
-                            ),
-                            Text(
-                              "Air Conditioner",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold
-                              ),
-                            )
-                          ],
-                        ),
-                        SizedBox(
-                          width: SizeConfig.blockSizeHorizontal * 5,
-                        ),
-                        Column(
-                          children: [
-                            Icon(
-                              FontAwesomeIcons.swimmingPool,
-                              color: Colors.grey
-                            ),
-                            Text(
-                              "Swimming Pool",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold
-                              ),
-                            )
-                          ],
-                        ),
-                        SizedBox(
-                          width: SizeConfig.blockSizeHorizontal * 5,
-                        ),
-                        Column(
-                          children: [
-                            Icon(
-                              FontAwesomeIcons.desktop,
-                              color: Colors.grey
-                            ),
-                            Text(
-                              "Computer",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold
-                              ),
-                            )
-                          ],
-                        ),
-                        SizedBox(
-                          width: SizeConfig.blockSizeHorizontal * 5,
-                        ),
-                        Column(
-                          children: [
-                            Icon(
-                              FontAwesomeIcons.paperPlane,
-                              color: Colors.grey
-                            ),
-                            Text(
-                              "Computer",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold
-                              ),
-                            )
-                          ],
-                        ),
-                      ],
-                    )
-                  ),
-                ),
-                Padding(
-                    padding: EdgeInsets.only(
-                        top: SizeConfig.blockSizeVertical * 2,
-                        left: SizeConfig.blockSizeHorizontal * 4),
-                    child: Text(
-                      "Location",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 18.0),
-                    )
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 10.0),
                   child: Container(
-                    height: SizeConfig.blockSizeVertical * 30,
-                    width: SizeConfig.screenWidth,
-                    child: GoogleMap(
-                      mapType: MapType.hybrid,
-                      initialCameraPosition: _kGooglePlex,
-                      onMapCreated: (GoogleMapController controller) {
-                        _controller.complete(controller);
-                      },
+                    margin: EdgeInsets.only(bottom: 20),
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            children: [
+                              Icon(
+                                Icons.wifi,
+                                color: Colors.grey
+                              ),
+                              Text(
+                                "Wi-Fi",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold
+                                ),
+                              )
+                            ],
+                          ),
+                          SizedBox(
+                            width: SizeConfig.blockSizeHorizontal * 5,
+                          ),
+                          Column(
+                            children: [
+                              Icon(
+                                Icons.directions_car_sharp,
+                                color: Colors.grey
+                              ),
+                              Text(
+                                "Car parking",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold
+                                ),
+                              )
+                            ],
+                          ),
+                          SizedBox(
+                            width: SizeConfig.blockSizeHorizontal * 5,
+                          ),
+                          Column(
+                            children: [
+                              Icon(
+                                Icons.tv,
+                                color: Colors.grey
+                              ),
+                              Text(
+                                "TV",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold
+                                ),
+                              )
+                            ],
+                          ),
+                          SizedBox(
+                            width: SizeConfig.blockSizeHorizontal * 5,
+                          ),
+                          Column(
+                            children: [
+                              Icon(
+                                FontAwesomeIcons.fan,
+                                color: Colors.grey
+                              ),
+                              Text(
+                                "Air Conditioner",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold
+                                ),
+                              )
+                            ],
+                          ),
+                          SizedBox(
+                            width: SizeConfig.blockSizeHorizontal * 5,
+                          ),
+                          Column(
+                            children: [
+                              Icon(
+                                FontAwesomeIcons.swimmingPool,
+                                color: Colors.grey
+                              ),
+                              Text(
+                                "Swimming Pool",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold
+                                ),
+                              )
+                            ],
+                          ),
+                          SizedBox(
+                            width: SizeConfig.blockSizeHorizontal * 5,
+                          ),
+                          Column(
+                            children: [
+                              Icon(
+                                FontAwesomeIcons.desktop,
+                                color: Colors.grey
+                              ),
+                              Text(
+                                "Computer",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold
+                                ),
+                              )
+                            ],
+                          ),
+                          SizedBox(
+                            width: SizeConfig.blockSizeHorizontal * 5,
+                          ),
+                          Column(
+                            children: [
+                              Icon(
+                                FontAwesomeIcons.paperPlane,
+                                color: Colors.grey
+                              ),
+                              Text(
+                                "Computer",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold
+                                ),
+                              )
+                            ],
+                          ),
+                        ],
+                      )
                     ),
                   ),
                 ),

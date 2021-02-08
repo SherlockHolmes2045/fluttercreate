@@ -16,6 +16,16 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
+
+  var _controller;
+
+
+  @override
+  void initState() {
+    _controller = ScrollController();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -138,6 +148,7 @@ class _DashboardState extends State<Dashboard> {
                       ),
                     ),
                   ),*/
+
                   Positioned(
                     top: SizeConfig.blockSizeVertical * 35,
                     left: SizeConfig.blockSizeHorizontal * 4,
@@ -168,42 +179,43 @@ class _DashboardState extends State<Dashboard> {
                                       ),
                                     ),
                                   ),
-                                  Padding(
-                                    padding: EdgeInsets.only(top: SizeConfig.blockSizeVertical * 1.5, left: SizeConfig.blockSizeHorizontal * 8),
-                                    child: Text(
-                                      "Independant",
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                        fontSize: 22.0
-                                      ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.only(left: SizeConfig.blockSizeHorizontal * 8),
-                                    child: Text(
-                                      "House",
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 22.0
-                                      ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.only(left: SizeConfig.blockSizeHorizontal * 8),
-                                    child: Text(
-                                      "Freedom & privacy",
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 15.0
-                                      ),
-                                    ),
-                                  )
-                                ],
+                                ),
                               ),
-                            ),
+                              Padding(
+                                padding: EdgeInsets.only(top: SizeConfig.blockSizeVertical * 1.5, left: SizeConfig.blockSizeHorizontal * 8),
+                                child: Text(
+                                  "Independant",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 22.0
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(left: SizeConfig.blockSizeHorizontal * 8),
+                                child: Text(
+                                  "House",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 22.0
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(left: SizeConfig.blockSizeHorizontal * 8),
+                                child: Text(
+                                  "Freedom & privacy",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 15.0
+                                  ),
+                                ),
+                              )
+                            ],
                           ),
+
                           Card(
                             color: Colors.lightGreen,
                             elevation: 10.0,
@@ -226,41 +238,99 @@ class _DashboardState extends State<Dashboard> {
                                       ),
                                     ),
                                   ),
-                                  Padding(
-                                    padding: EdgeInsets.only(top: SizeConfig.blockSizeVertical * 1.5, left: SizeConfig.blockSizeHorizontal * 8),
-                                    child: Text(
-                                      "Independant",
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 22.0
-                                      ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.only(left: SizeConfig.blockSizeHorizontal * 8),
-                                    child: Text(
-                                      "House",
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 22.0
-                                      ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.only(left: SizeConfig.blockSizeHorizontal * 8),
-                                    child: Text(
-                                      "Freedom & privacy",
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 15.0
-                                      ),
-                                    ),
-                                  )
-                                ],
+                                ),
                               ),
-                            ),
+                              Padding(
+                                padding: EdgeInsets.only(top: SizeConfig.blockSizeVertical * 1.5, left: SizeConfig.blockSizeHorizontal * 8),
+                                child: Text(
+                                  "Independant",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 22.0
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(left: SizeConfig.blockSizeHorizontal * 8),
+                                child: Text(
+                                  "House",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 22.0
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(left: SizeConfig.blockSizeHorizontal * 8),
+                                child: Text(
+                                  "Freedom & privacy",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 15.0
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                      Card(
+                        color: Colors.lightGreen,
+                        elevation: 10.0,
+                        child: Container(
+                          height: SizeConfig.blockSizeVertical * 15,
+                          width: SizeConfig.blockSizeHorizontal *50,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.only(top: SizeConfig.blockSizeVertical * 1.5, left: SizeConfig.blockSizeHorizontal * 4),
+                                child: CircleAvatar(
+                                  radius: 12.0,
+                                  child: Text(
+                                    "2",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 10.0
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(top: SizeConfig.blockSizeVertical * 1.5, left: SizeConfig.blockSizeHorizontal * 8),
+                                child: Text(
+                                  "Independant",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 22.0
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(left: SizeConfig.blockSizeHorizontal * 8),
+                                child: Text(
+                                  "House",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 22.0
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(left: SizeConfig.blockSizeHorizontal * 8),
+                                child: Text(
+                                  "Freedom & privacy",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 15.0
+                                  ),
+                                ),
+                              )
+                            ],
                           ),
                           Card(
                             color: Colors.lightGreenAccent,
@@ -272,14 +342,22 @@ class _DashboardState extends State<Dashboard> {
                           )
                         ],
                       ),
-                    ),
-                  )
-                ],
+                      Card(
+                        color: Colors.lightGreenAccent,
+                        elevation: 10.0,
+                        child: Container(
+                          height: SizeConfig.blockSizeVertical * 15,
+                          width: SizeConfig.blockSizeHorizontal *50,
+                        ),
+                      )
+                    ],
+                  ),
+                ),
               ),
             ),
 
             SizedBox(
-              height: SizeConfig.blockSizeVertical * 17,
+              height: SizeConfig.blockSizeVertical * 2,
             ),
 
             SingleChildScrollView(
@@ -321,236 +399,245 @@ class _DashboardState extends State<Dashboard> {
               height: SizeConfig.blockSizeVertical * 1.5,
             ),
             Padding(
-              padding: EdgeInsets.only(left: 10.0),
+              padding: EdgeInsets.symmetric(horizontal: 10.0),
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child:
                   Row(
                     children: [
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Card(
-                            color: Colors.lightGreenAccent,
-                            elevation: 3.0,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Container(
-                              height: SizeConfig.blockSizeVertical * 23,
-                              width: SizeConfig.blockSizeHorizontal * 80,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.rectangle,
+                      Container(
+                        margin: EdgeInsets.only(left: 10),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Card(
+                              color: Colors.lightGreenAccent,
+                              elevation: 3.0,
+                              shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10),
-                                image: DecorationImage(
-                                  image: AssetImage(
-                                    Assets.images[0]
+                              ),
+                              child: Container(
+                                height: SizeConfig.blockSizeVertical * 23,
+                                width: SizeConfig.blockSizeHorizontal * 80,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.rectangle,
+                                  borderRadius: BorderRadius.circular(10),
+                                  image: DecorationImage(
+                                    image: AssetImage(
+                                      Assets.images[0]
+                                    ),
+                                    fit: BoxFit.cover
                                   ),
-                                  fit: BoxFit.cover
                                 ),
                               ),
                             ),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Column(
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.only(left : SizeConfig.blockSizeHorizontal,top: SizeConfig.blockSizeVertical),
-                                    child: Text(
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Column(
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.only(left : SizeConfig.blockSizeHorizontal,top: SizeConfig.blockSizeVertical),
+                                      child: Text(
+                                          "Pride Park Royale",
+                                        style: TextStyle(
+                                          fontSize: 20.0
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.only(left : SizeConfig.blockSizeHorizontal),
+                                      child: Text(
+                                        "£1.86 Cr - 2.85 Cr",
+                                        style: TextStyle(
+                                            fontSize: 20.0,
+                                          fontWeight: FontWeight.bold
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                                SizedBox(
+                                  width: SizeConfig.blockSizeHorizontal * 30,
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(top: 7.0),
+                                  child: InkWell(
+                                    onTap: (){
+                                      Navigator.push(context,ScaleRoute(page: HomeDetail()));
+                                    },
+                                    child: CircleAvatar(
+                                      backgroundColor: Colors.lightGreenAccent,
+                                      child: Center(
+                                        child: Icon(
+                                          Icons.arrow_forward,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                )
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(left: 10),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Card(
+                              color: Colors.lightGreenAccent,
+                              elevation: 3.0,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Container(
+                                height: SizeConfig.blockSizeVertical * 23,
+                                width: SizeConfig.blockSizeHorizontal * 80,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.rectangle,
+                                  borderRadius: BorderRadius.circular(10),
+                                  image: DecorationImage(
+                                      image: AssetImage(
+                                          Assets.images[1]
+                                      ),
+                                      fit: BoxFit.cover
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Column(
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.only(left : SizeConfig.blockSizeHorizontal,top: SizeConfig.blockSizeVertical),
+                                      child: Text(
                                         "Pride Park Royale",
-                                      style: TextStyle(
-                                        fontSize: 20.0
+                                        style: TextStyle(
+                                            fontSize: 20.0
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.only(left : SizeConfig.blockSizeHorizontal),
-                                    child: Text(
-                                      "£1.86 Cr - 2.85 Cr",
-                                      style: TextStyle(
-                                          fontSize: 20.0,
-                                        fontWeight: FontWeight.bold
+                                    Padding(
+                                      padding: EdgeInsets.only(left : SizeConfig.blockSizeHorizontal),
+                                      child: Text(
+                                        "£1.86 Cr - 2.85 Cr",
+                                        style: TextStyle(
+                                            fontSize: 20.0,
+                                            fontWeight: FontWeight.bold
+                                        ),
                                       ),
-                                    ),
-                                  )
-                                ],
-                              ),
-                              SizedBox(
-                                width: SizeConfig.blockSizeHorizontal * 30,
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(top: 7.0),
-                                child: InkWell(
-                                  onTap: (){
-                                    Navigator.push(context,ScaleRoute(page: HomeDetail()));
-                                  },
-                                  child: CircleAvatar(
-                                    backgroundColor: Colors.lightGreenAccent,
-                                    child: Center(
-                                      child: Icon(
-                                        Icons.arrow_forward,
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                  ),
+                                    )
+                                  ],
                                 ),
-                              )
-                            ],
-                          )
-                        ],
+                                SizedBox(
+                                  width: SizeConfig.blockSizeHorizontal * 30,
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(top: 7.0),
+                                  child: InkWell(
+                                    onTap: (){
+                                      Navigator.push(context,ScaleRoute(page: HomeDetail()));
+                                    },
+                                    child: CircleAvatar(
+                                      backgroundColor: Colors.lightGreenAccent,
+                                      child: Center(
+                                        child: Icon(
+                                          Icons.arrow_forward,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                )
+                              ],
+                            )
+                          ],
+                        ),
                       ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Card(
-                            color: Colors.lightGreenAccent,
-                            elevation: 3.0,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Container(
-                              height: SizeConfig.blockSizeVertical * 23,
-                              width: SizeConfig.blockSizeHorizontal * 80,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.rectangle,
+                      Container(
+                        margin: EdgeInsets.only(left: 10),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Card(
+                              color: Colors.lightGreenAccent,
+                              elevation: 3.0,
+                              shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10),
-                                image: DecorationImage(
-                                    image: AssetImage(
-                                        Assets.images[1]
-                                    ),
-                                    fit: BoxFit.cover
+                              ),
+                              child: Container(
+                                height: SizeConfig.blockSizeVertical * 23,
+                                width: SizeConfig.blockSizeHorizontal * 80,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.rectangle,
+                                  borderRadius: BorderRadius.circular(10),
+                                  image: DecorationImage(
+                                      image: AssetImage(
+                                          Assets.images[2]
+                                      ),
+                                      fit: BoxFit.cover
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Column(
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.only(left : SizeConfig.blockSizeHorizontal,top: SizeConfig.blockSizeVertical),
-                                    child: Text(
-                                      "Pride Park Royale",
-                                      style: TextStyle(
-                                          fontSize: 20.0
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Column(
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.only(left : SizeConfig.blockSizeHorizontal,top: SizeConfig.blockSizeVertical),
+                                      child: Text(
+                                        "Pride Park Royale",
+                                        style: TextStyle(
+                                            fontSize: 20.0
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.only(left : SizeConfig.blockSizeHorizontal),
-                                    child: Text(
-                                      "£1.86 Cr - 2.85 Cr",
-                                      style: TextStyle(
-                                          fontSize: 20.0,
-                                          fontWeight: FontWeight.bold
+                                    Padding(
+                                      padding: EdgeInsets.only(left : SizeConfig.blockSizeHorizontal),
+                                      child: Text(
+                                        "£1.86 Cr - 2.85 Cr",
+                                        style: TextStyle(
+                                            fontSize: 20.0,
+                                            fontWeight: FontWeight.bold
+                                        ),
                                       ),
-                                    ),
-                                  )
-                                ],
-                              ),
-                              SizedBox(
-                                width: SizeConfig.blockSizeHorizontal * 30,
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(top: 7.0),
-                                child: InkWell(
-                                  onTap: (){
-                                    Navigator.push(context,ScaleRoute(page: HomeDetail()));
-                                  },
-                                  child: CircleAvatar(
-                                    backgroundColor: Colors.lightGreenAccent,
-                                    child: Center(
-                                      child: Icon(
-                                        Icons.arrow_forward,
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                  ),
+                                    )
+                                  ],
                                 ),
-                              )
-                            ],
-                          )
-                        ],
-                      ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Card(
-                            color: Colors.lightGreenAccent,
-                            elevation: 3.0,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Container(
-                              height: SizeConfig.blockSizeVertical * 23,
-                              width: SizeConfig.blockSizeHorizontal * 80,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.rectangle,
-                                borderRadius: BorderRadius.circular(10),
-                                image: DecorationImage(
-                                    image: AssetImage(
-                                        Assets.images[2]
-                                    ),
-                                    fit: BoxFit.cover
+                                SizedBox(
+                                  width: SizeConfig.blockSizeHorizontal * 30,
                                 ),
-                              ),
-                            ),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Column(
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.only(left : SizeConfig.blockSizeHorizontal,top: SizeConfig.blockSizeVertical),
-                                    child: Text(
-                                      "Pride Park Royale",
-                                      style: TextStyle(
-                                          fontSize: 20.0
+                                Padding(
+                                  padding: EdgeInsets.only(top: 7.0),
+                                  child: InkWell(
+                                    onTap: (){
+                                      Navigator.push(context,ScaleRoute(page: HomeDetail()));
+                                    },
+                                    child: CircleAvatar(
+                                      backgroundColor: Colors.lightGreenAccent,
+                                      child: Center(
+                                        child: Icon(
+                                          Icons.arrow_forward,
+                                          color: Colors.white,
+                                        ),
                                       ),
                                     ),
                                   ),
-                                  Padding(
-                                    padding: EdgeInsets.only(left : SizeConfig.blockSizeHorizontal),
-                                    child: Text(
-                                      "£1.86 Cr - 2.85 Cr",
-                                      style: TextStyle(
-                                          fontSize: 20.0,
-                                          fontWeight: FontWeight.bold
-                                      ),
-                                    ),
-                                  )
-                                ],
-                              ),
-                              SizedBox(
-                                width: SizeConfig.blockSizeHorizontal * 30,
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(top: 7.0),
-                                child: InkWell(
-                                  onTap: (){
-                                    Navigator.push(context,ScaleRoute(page: HomeDetail()));
-                                  },
-                                  child: CircleAvatar(
-                                    backgroundColor: Colors.lightGreenAccent,
-                                    child: Center(
-                                      child: Icon(
-                                        Icons.arrow_forward,
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              )
-                            ],
-                          )
-                        ],
+                                )
+                              ],
+                            )
+                          ],
+                        ),
                       ),
                     ],
                   )
